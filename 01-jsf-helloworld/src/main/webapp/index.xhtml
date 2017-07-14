@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+        <style>
+            .code {font-family: monospace}
+        </style>
+    </h:head>
+    <h:body>
+        <h1>Index</h1>
+        <p>
+            Hello World!  This is a basic JSF xhtml page!
+        </p>
+        
+        <p> 
+            The source for this page is <span class="code">index.xhtml</span>.            
+        </p>
+        
+        <p> 
+            The <span class="code">web.xml</span> file for this application
+            maps <span class="code">FacesServlet</span> to the 
+            <span class="code">*.xhtml</span> extension.  It is 
+            important to have the <span class="code">*.xhtml</span> extension
+            mapped so if a user puts <span class="code">index.xhtml</span>
+            into the browser, the user won't get the source code
+            of the XHTML page.
+		</p>
+		<p>
+			Here are some example hyperlinks
+		</p>
+		
+		<table border="1">
+			<tr>
+				<th>Link</th>
+				<th>Code</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td>
+					<h:link value="index.xhtml" outcome="/index" />
+                </td>
+				<td>
+					<span class="code">
+						&lt;h:link value="index.xhtml" outcome="/index" /&gt;
+					</span>
+				</td>
+				<td>
+					The source code for this page is in the root directory of the webapp:
+					<br />
+					<br />
+					<span class="code">index.xhtml</span>
+					<br />
+					<br />
+					The source file ends with the <span class="code">*.xhtml</span> extension.
+					You access it through <span class="code">FacesServlet</span> with
+					a <span class="code">*.xhtml</span> extension. 					
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h:link value="manager/manager.xhtml" outcome="/manager/manager" />
+				</td>
+				<td>
+					<span class="code">
+						&lt;h:link value="manager/manager.xhtml" outcome="/manager/manager" /&gt;
+					</span>
+				</td>
+				<td>
+					The source code for this page is in the <span class="code">/manager</span> sub-directory of the webapp.
+					<br />
+					<br />
+					<span class="code">manager/manager.xhtml</span>
+					<br />
+					<br />
+					The source file ends with the <span class="code">*.xhtml</span> extension.
+					You access it through <span class="code">FacesServlet</span> with
+					a <span class="code">*.xhtml</span> extension. 					
+				</td>
+			</tr>
+		</table>		
+    </h:body>
+</html>

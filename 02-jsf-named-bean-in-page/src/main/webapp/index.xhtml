@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+        <style>
+            .code {font-family:monospace;}
+        </style>
+    </h:head>
+    <h:body>
+        <h1>
+            Named bean in page
+        </h1>
+        <p>
+            This is an JSF XHTML page and it uses simple named 
+            beans to display some data. In general, to use a bean on
+            a JSF page, the bean needs to be  
+            annotated with <span class="code">@Named</span> and it
+            needs to be annotated with a scope, such as 
+            <span class="code">@RequestScoped</span>.  Below are a few
+            examples of beans used from different scopes.
+        </p>
+        <p>
+            <h:link value="Refresh page" outcome="/index"/>
+        </p>
+        <p>
+            Request scoped, <span class="code">TimestampController</span> named bean.
+        </p>
+        <table border="1">
+            <tr>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Code
+                </th>
+                <th>
+                    Output
+                </th>
+                <th>
+                    Comments
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    Timestamp
+                </td>
+                <td>
+                    \#{timestampController.timestamp}
+                </td>
+                <td>
+                    #{timestampController.timestamp}
+                </td>
+                <td>
+                    This calls <span class="code">getTimestamp()</span> 
+                    method which simply returns a timestamp as a pre-formatted
+                    string.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Memory Address
+                </td>
+                <td>
+                    \#{timestampController.memoryAddress}
+                </td>
+                <td>
+                    #{timestampController.memoryAddress}
+                </td>
+                <td>
+                    This calls <span class="code">getMemoryAddress()</span> 
+                    Since this is a <span class="code">@RequestScoped</span>
+                    bean, you should see the memory address change every
+                    time the page refreshes because a new object is created
+                    for each request.
+                </td>
+            </tr>
+        </table>
+        
+        
+        <p>
+            Session scoped, <span class="code">SessionController</span> named bean.
+        </p>
+        <table border="1">
+            <tr>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Code
+                </th>
+                <th>
+                    Output
+                </th>
+                <th>
+                    Comments
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    Session ID
+                </td>
+                <td>
+                    \#{sessionController.sessionId}
+                </td>
+                <td>
+                    #{sessionController.sessionId}
+                </td>
+                <td>
+                    This calls <span class="code">getSessionID()</span> 
+                    method which uses <span class="code">FacesContext</span>
+                    to get the user's session ID.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Memory Address
+                </td>
+                <td>
+                    \#{sessionController.memoryAddress}
+                </td>
+                <td>
+                    #{sessionController.memoryAddress}
+                </td>
+                <td>
+                    This calls <span class="code">getMemoryAddress()</span> 
+                    Since this is a <span class="code">@SessionScoped</span>
+                    bean, the memory address will remain the same
+                    each page refresh because only 1 instance is created
+                    for the session..
+                </td>
+            </tr>
+        </table>
+    </h:body>
+    
+</html>
+
