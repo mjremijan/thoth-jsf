@@ -16,6 +16,7 @@
     <modules>
         <module>01-jsf-helloworld</module>
         <module>02-jsf-named-bean-in-page</module>
+        <module>03-jsf-facelet_template</module>
     </modules>
     
     <dependencies>
